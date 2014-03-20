@@ -16,6 +16,12 @@ angular.module('ispanApp', [
         templateUrl:'views/search.html',
         controller: 'searchCtrl'
       } )
+        .when ('/search',{
+        templateUrl:'views/search.html',
+        controller: 'searchCtrl'
+
+
+    })
       .otherwise({
         redirectTo: '/'
       });
