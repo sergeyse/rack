@@ -1,0 +1,31 @@
+{
+    "customer": "Helgi Jonsson",
+    "data": "24.10.13",
+    "actualsize": "Já",
+    "units": [
+        {
+            "size": "125.3*55.5",
+            "profile": "9mm.",
+            "type": "4+4",
+            "ready": false
+        } ,
+        {
+            "size": "125.3*55.5",
+            "profile": "9mm.",
+            "type": "4+4",
+            "ready": true
+        },
+
+        {
+            "size": "125.3*55.5",
+            "profile": "9mm.",
+            "type": "4+4",
+            "ready": true
+        }
+
+    ]
+
+
+
+
+}

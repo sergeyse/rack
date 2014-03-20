@@ -1,0 +1,32 @@
+
+<ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li>Pontun: {{ orders.customer }}</li>
+
+</ol>
+
+        <H2>Viðskiftavinur:</H2>
+        <p><h3>{{ orders.customer }}<h3></h3></p>
+
+        <p>Allar saerðir eru i glermal: {{ orders.actualsize }}</p>
+        <p>Dagsetning pönturnar : <span>{{ orders.data }}</span></p>
+
+        <table class="table">
+   <tr>
+       <th>Size</th>
+       <th>Profile</th>
+       <th>Type</th>
+       <th>Ready</th>
+   </tr>
+      <tr  ng-repeat="u in orders.units">
+
+          <td>{{ u.size }}</td>
+          <td>{{ u.profile }}</td>
+          <td>{{ u.type}}</td>
+          <td>{{ u.ready}}</td>
+
+      </tr>
+
+        </table>
+
+

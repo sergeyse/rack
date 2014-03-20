@@ -1,0 +1,24 @@
+{
+    "customer": "Jon Jonsson",
+    "data": "26.11.13",
+    "actualsize": "Nei",
+    "units": [
+        {
+            "size": "25.3*55.5",
+            "profile": "12mm.",
+            "type": "6K+4",
+            "ready": false
+        } ,
+        {
+            "size": "33.3*55.5",
+            "profile": "9mm.",
+            "type": "4+4K",
+            "ready": true
+        }
+
+    ]
+
+
+
+
+}
