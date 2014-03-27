@@ -4,7 +4,8 @@ angular.module('ispanApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+        'trColorFilter'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -13,11 +14,11 @@ angular.module('ispanApp', [
         controller: 'MainCtrl'
       } )
         .when ('/search/:orderId' , {
-        templateUrl:'views/search.html',
+        templateUrl:'views/searchres.html',
         controller: 'searchCtrl'
       } )
         .when ('/search',{
-        templateUrl:'views/search.html',
+        templateUrl:'views/searchres.html',
         controller: 'searchCtrl'
 
 

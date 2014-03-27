@@ -1,17 +1,26 @@
 
 
-    Always a pleasure scaffolding your apps.
+
 
     <!-- / Navbar -->
             <div>
               <p></p>
-            <p> Vinsamlegast slá ponutnarnumer her að ofan.</p>
+            <p> Vinsamlegast slá ponutnarnumer .</p>
             <p> Notið 171717, 141414 eða 121212 </p>
             <p>In future this will be replaced with a code provided by sales department </p>
             </div>
+            <p></p>
+    <div class="col-lg-6" style="margin-top: 10px">
+        <div class="input-group">
+            <input ng-model="query" type="text" class="form-control">
+      <span class="input-group-btn">
+         <a href="#/search/{{ query }}" class="btn btn-primary" id="get-data-btn">Leita</a>
+      </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
 
 
-            <div style="border-top: solid black 1px;">
+            <div class="col-xs-12" >
                 <h2>Featured Products</h2>
                 <img src="images/1.jpg" alt="Gluggi" class="img-rounded">
                 <img src="images/2.jpg" alt="Gluggi" class="img-rounded">

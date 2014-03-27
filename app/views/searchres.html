@@ -18,9 +18,9 @@
        <th>Type</th>
        <th>Ready</th>
    </tr>
-      <tr  ng-repeat="u in orders.units">
+      <tr  ng-repeat="u in orders.units" class="{{ u.ready|trcolor }}">
 
-          <td>{{ u.size }}</td>
+          <td >{{ u.size }}</td>
           <td>{{ u.profile }}</td>
           <td>{{ u.type}}</td>
           <td>{{ u.ready}}</td>
