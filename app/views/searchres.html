@@ -8,6 +8,7 @@
         <H2>Viðskiftavinur:</H2>
         <p><h3>{{ orders.customer }}<h3></h3></p>
 
+
         <p>Allar saerðir eru i glermal: {{ orders.actualsize }}</p>
         <p>Dagsetning pönturnar : <span>{{ orders.data }}</span></p>
 
@@ -28,5 +29,35 @@
       </tr>
 
         </table>
+ <h2>Firebase example </h2>
+        <p>
+         <a href="https://incandescent-fire-7211.firebaseio.com">   database is here</a>
+        </p>
+
+<table class="table" ng-show="show">
+    <tr>
+        <th>Dagsetning</th>
+        <th>Gata</th>
+        <th>Postn</th>
+        <th>Rekkan</th>
+        <th>Siminn</th>
+        <th>Nafn</th>
+    </tr>
+    <tr ng-repeat="u in all | orderByPriority |filter:searchText">
+
+        <td >{{ u.dagsetning }}</td>
+        <td>{{ u.gata }}</td>
+        <td>{{ u.postn}}</td>
+        <td>{{ u.rekkan}}</td>
+        <td>{{ u.siminn }}</td>
+        <td>{{ u.nafn }}</td>
+        <td><button ng-click="del(u.$id)" class="btn btn-danger">Eyda</button></td>
+    </tr>
+</table>
+<div ng-hide="show">
+        <h2>Rekkan N</h2>
+        <h3>{{ pont.rekkan }}<span>{{ pont.pontun }}</span></h3>
+<button ng-click="del(pont.$id)" class="btn btn-danger">Eyda</button>
+</div>
 
 

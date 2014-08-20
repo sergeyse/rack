@@ -1,0 +1,54 @@
+<p>This is the geoedit view.</p>
+
+<div>
+    <form role="form">
+        <div class="form-group">
+            <label class=" control-label">Time:</label>
+
+            <div>
+                <p class="form-control-static"><span><h3 style="color: #3276b1">{{ geoMarker.time }}</h3></span></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rekkan">Rekkan</label>
+            <input type="number" class="form-control" id="rekkan" placeholder="Enter rekkan numer" name="rekkan" min="1"
+                   maxlength="6" ng-model="geoMarker.rekkan"/>
+
+        </div>
+        <div class="form-group">
+            <label for="Comment">Nafn</label>
+            <input type="text" class="form-control" id="Comment" placeholder="Comment" name="comment" ng-model="geoMarker.comment"/>
+
+        </div>
+        <!--<div class="form-group">
+            <label for="siminn">Siminn</label>
+            <input type="tel" class="form-control" id="siminn" placeholder="Sima numer" name="siminn" ng-model="od.siminn"/>
+
+        </div>-->
+        <!--<div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>-->
+        <!--   <div class="checkbox">
+               <label>
+                   <input type="checkbox"> Check me out
+               </label>
+           </div>-->
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" ng-click="save()">
+            Skrá do not working
+        </button>
+        <p></p>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" ng-click="delete()">
+            Delete
+        </button>
+        <p></p>
+        <a ng-href="#/googleMap/"> <button type="button" class="btn btn-danger btn-lg btn-block" >
+            Cancel
+        </button>
+        </a>
+    </form
+            >
+
+</div>

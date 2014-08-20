@@ -1,0 +1,23 @@
+CACHE MANIFEST
+CACHE:
+# views
+views/create.html
+views/main.html
+views/searchres.html
+views/fullsearchres.html
+index.html
+
+# scripts
+bower_components/angular/angular.js
+bower_components/firebase-simple-login/firebase-simple-login.js
+
+
+scripts/app.js
+scripts/controllers/search.js
+scripts/controllers/addnew.js
+scripts/controllers/fullSearchCtrl.js
+scripts/controllers/main.js
+scripts/controllers/create.js
+
+NETWORK:
+*

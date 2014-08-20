@@ -1,0 +1,40 @@
+<p>This is the addnew view.</p>
+<form role="form" name="form" novalidate  >
+<!--    <div class="form-group">
+        <label   class=" control-label" >Rekka:</label>
+        <div >
+            <p class="form-control-static"><span><h3 style="color: #3276b1">{{ defentr.pontun}}</h3></span></p>
+        </div>
+    </div>-->
+
+    <div class="form-group">
+        <label for="pontun">Pontun</label>
+        <input type="number" class="form-control" id="pontun" placeholder="Enter pontun numer" name="pontun" min="11" max="999999" ng-model="defentr.pontun" required integer />
+        <span ng-show="form.pontun.$error.integer" class="sample-show-hide">This is not valid integer!</span>
+        <!--"form.pontun.$error.integer"this is corresponding to a form and input ID NOT a data model !-->
+           <span ng-show="form.pontun.$error.min || form.pontun.$error.max">
+        The value must be in range 300000 to 999999!</span>
+    </div>
+
+
+
+    </div>
+    <div class="form-group">
+        <label for="rekkan">Rekkan</label>
+        <input type="text" class="form-control" id="rekkan" placeholder="Rekkan" name="rekkan"  ng-model="defentr.rekkan" required />
+
+    </div>
+<!--    <div class="form-group">
+        <label for="siminn">Siminn</label>
+        <input type="tel" class="form-control" id="siminn" placeholder="Sima numer" name="siminn"  ng-model="od.siminn" />
+
+    </div>-->
+
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="form.$invalid" ng-click="saveNew()">
+        Skrá
+    </button>
+</form>
+
+
+
+

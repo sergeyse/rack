@@ -1,0 +1,155 @@
+<div class="container-fluid">
+
+    <!--  Search: <input ng-model="searchText">-->
+
+
+    <!--<div class="input-group input-group-lg">
+      <span class="input-group-addon">Leita</span>
+       <input  class="form-control" ng-model="searchText"> <br>
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>Dagsetning</th>
+            <th>Gata</th>
+            <th>Postn</th>
+            <th>Rekkan</th>
+            <th>Siminn</th>
+            <th>Nafn</th>
+        </tr>
+        <tr ng-repeat="u in uiorders | orderByPriority |filter:searchText">
+
+            <td >{{ u.dagsetning }}</td>
+            <td>{{ u.gata }}</td>
+            <td>{{ u.postn}}</td>
+            <td>{{ u.rekkan}}</td>
+            <td>{{ u.siminn }}</td>
+            <td>{{ u.nafn }}</td>
+        </tr>
+        </table>-->
+
+    <!--         <form name="rekkaIn">
+                 <div>
+                     <label>Rekka Numer</label>
+                     <input type="number" name="Rekka N" ng-model="entrance.rekkan" required>
+                 </div>
+                 <div>
+                     <label>Pontun</label>
+                     <input type="number" name="Pontun N" ng-model="entrance.pontun" required>
+                     <button ng-click="save()" class="btn btn-primary">Save</button>
+                 </div>
+             </form>
+ -->
+    <!--have to change it to form !-->
+    <!--<div class="row">
+        <div class="col-xs-12">
+            <input name="rekka" type="number" class="form-control" placeholder="Sla Rekkanumer "
+                   ng-model="entrance.rekkan" required>
+            <span ng-show="rekka.$error.required" class="alert">Required!</span>
+        </div>
+
+    </div>
+    <p></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="number" class="form-control" placeholder="Sla Pontun" ng-model="entrance.pontun" required="">
+        </div>
+
+    </div>
+    <p></p>
+
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="save()">Skrá</button>
+
+        </div>
+    </div>
+
+    <p></p>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-md-10">
+            <div ng-show="waite" class="alert alert-success" role="alert">Buinn að skrá</div>
+        </div>
+    </div>-->
+
+    <!--<form  role="form">-->
+    <!--<div class="form-group">-->
+    <!--<div class="control-group" ng-class="{error: myForm.rekka.$invalid && !myForm.rekka.$pristine}">-->
+    <!--      <label>Rekka No</label>
+          <input type="number" name="rekka" ng-model="entrance.rekkan" min="1" max="4" required>-->
+    <!--   <span ng-show="myForm.rekka.$error.required && !myForm.name.$pristine" class="help-inline">
+           Required {{myForm.name.$pristine}}</span>
+                  <span ng-show="myForm.rekka.$error.integer" class="help-inline">
+           Sla rekka numer</span>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="control-group" ng-class="{error: myForm.pontun.$invalid && !myForm.pontun.$pristine}">-->
+    <!--  <div class="form-group">
+          <label for="pontun">Pontun</label>
+          <input type="number" id="pontun" name="pontun" ng-model="entrance.pontun" min="6" max="6" required>-->
+    <!--    <span ng-show="myForm.pontun.$error.required && !myForm.pontun.$pristine" class="help-inline">
+            Required</span>
+        <span ng-show="myForm.pontun.$error.integer" class="help-inline">
+            Sla rekka numer
+            </span>-->
+</div>
+<!--</div>-->
+<!--   <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" ng-click="save()">
+       Skrá
+   </button>-->
+<!--</form>-->
+<form role="form">
+    <div class="form-group">
+        <label class=" control-label">Rekka:</label>
+
+        <div>
+            <p class="form-control-static"><span><h3 style="color: #3276b1">{{ od.rekkan }}</h3></span></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="pontun">Pontun</label>
+        <input type="number" class="form-control" id="pontun" placeholder="Enter pontun numer" name="pontun" min="1"
+               maxlength="6" ng-model="od.pontun"/>
+
+    </div>
+    <div class="form-group">
+        <label for="nafn">Nafn</label>
+        <input type="text" class="form-control" id="nafn" placeholder="Nafn" name="nafn" ng-model="od.nafn"/>
+
+    </div>
+    <div class="form-group">
+        <label for="siminn">Siminn</label>
+        <input type="tel" class="form-control" id="siminn" placeholder="Sima numer" name="siminn" ng-model="od.siminn"/>
+
+    </div>
+    <!--<div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
+    </div>-->
+    <!--   <div class="checkbox">
+           <label>
+               <input type="checkbox"> Check me out
+           </label>
+       </div>-->
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" ng-click="save()">
+        Skrá
+    </button>
+    <p></p>
+    <a ng-href="#/fullsearch/"> <button type="button" class="btn btn-danger btn-lg btn-block" >
+        Cancel
+    </button>
+    </a>
+</form>
+
+
+</div>
+
+
+
