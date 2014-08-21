@@ -16,8 +16,10 @@ angular.module('ispanApp')
        // $scope.entrance ={};
         //$scope.searchText ;
         $scope.save = function(){
-            $scope.od.$save();
-            $location.path('/fullsearch');
+            $scope.od.$save().then(function(){
+                $location.path('/fullsearch');
+            });
+
 
 
 

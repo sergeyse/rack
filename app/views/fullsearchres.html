@@ -1,43 +1,47 @@
-<div class="container-fluid">
-    <div class="form-group">
-        <label for="rekka">Leita</label>
-        <input type="number" class="form-control" id="rekka" ng-model="search.rekkan" placeholder="Rekka">
-    </div>
-    <div ng-hide="finish">
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45"
-                 aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                <span class="sr-only">45% Complete</span>
+
+    <div class="container-fluid ">
+        <div class="form-group">
+            <label for="rekka">Leita</label>
+            <input type="number" class="form-control" id="rekka" ng-model="search.rekkan" placeholder="Rekka">
+        </div>
+        <div ng-hide="finish">
+            <div>
+                <img src="/images/spinner-trans.gif">
             </div>
-        </div>
+           <!-- <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45"
+                     aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                    <span class="sr-only">45% Complete</span>
+                </div>
+            </div>-->
 
+        </div>
+        <table class="table">
+            <div class="row">
+                <tr>
+                    <th><a href="" ng-click="predicate = 'postn'; reverse=!reverse">PostN</a>
+
+                    <th><a href="" ng-click="predicate = 'rekkan'; reverse=!reverse">Rekka Number</a></th>
+                    <th class="hidden-xs"><a href="" ng-click="predicate = 'gata'; reverse=!reverse">Gata</a></th>
+                    <th class="hidden-xs"><a href="" ng-click="predicate = 'nafn'; reverse=!reverse">Nafn</a></th>
+                    <th><a ng-href="#/addnew">
+                        <button type="button" style="margin-left: 1px" class="btn btn-primary btn-lg"><span>+</span>
+                        </button>
+                    </a></th>
+                </tr>
+            </div>
+            <div class="row">
+                <!--this one is used when we need a list from an object returned from a Firebase-->
+                <!--<tr  class="repeat-item" ng-repeat="r in allRecords | orderByPriority | orderBy:predicate:reverse | filter:search">-->
+                <tr class="repeat-item" ng-repeat="r in allRecords  | orderBy:predicate:reverse | filter:search">
+                    <td>{{r.postn}}</td>
+                    <td>{{r.rekkan}}</td>
+                    <td class="hidden-xs">{{r.gata}}
+                    <td class="hidden-xs">{{ r.nafn }}</td>
+                    <td>
+                        <button ng-click="edit(r.$id)" class="btn btn-info">Edit</button>
+                    </td>
+                </tr>
+            </div>
+        </table>
     </div>
-    <table class="table">
-        <div class="row">
-            <tr>
-                <th><a href="" ng-click="predicate = 'postn'; reverse=!reverse">PostN</a>
-
-                <th><a href="" ng-click="predicate = 'rekkan'; reverse=!reverse">Rekka Number</a></th>
-                <th class="hidden-xs"><a href="" ng-click="predicate = 'gata'; reverse=!reverse">Gata</a></th>
-                <th class="hidden-xs"><a href="" ng-click="predicate = 'nafn'; reverse=!reverse">Nafn</a></th>
-                <th><a ng-href="#/addnew">
-                    <button type="button" style="margin-left: 1px" class="btn btn-primary btn-lg"><span>+</span>
-                    </button>
-                </a></th>
-            </tr>
-        </div>
-        <div class="row">
-            <!--this one is used when we need a list from an object returned from a Firebase-->
-            <!--<tr  class="repeat-item" ng-repeat="r in allRecords | orderByPriority | orderBy:predicate:reverse | filter:search">-->
-            <tr class="repeat-item" ng-repeat="r in allRecords  | orderBy:predicate:reverse | filter:search">
-                <td>{{r.postn}}</td>
-                <td>{{r.rekkan}}</td>
-                <td class="hidden-xs">{{r.gata}}
-                <td class="hidden-xs">{{ r.nafn }}</td>
-                <td>
-                    <button ng-click="edit(r.$id)" class="btn btn-info">Edit</button>
-                </td>
-            </tr>
-        </div>
-    </table>
-</div>
