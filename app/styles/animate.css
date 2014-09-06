@@ -3163,6 +3163,6 @@ Copyright (c) 2014 Daniel Eden
 }
 #map{
     height: 430px;
-    width: 300px;
+    /*width: 300px;*/
 }
 /*------------ End tets animation block--------------*/

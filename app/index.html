@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html manifest="cache.manifest"></html>
+<!--<html manifest="cache.manifest"></html>-->
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
@@ -31,7 +31,9 @@
 
     <!-- endbuild -->
 </head>
-<body ng-app="ispanApp">
+<!--<body ng-app="ispanApp">-->
+ <!--using .bootstrap on a callback to load angular app manualy after the google map has loaded  &ndash;&gt;-->
+<body id="app">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -82,6 +84,7 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
+
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/search.js"></script>
@@ -91,12 +94,36 @@
 <script src="scripts/filters/trcolorfilter.js"></script>
 <script src="scripts/controllers/fullSearchCtrl.js"></script>
 
+<!--
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
+-->
+
 
 <script src="scripts/controllers/addnew.js"></script>
 <script src="scripts/controllers/landingMap.js"></script>
 <script src="scripts/controllers/googleMap.js"></script>
 
 <script src="scripts/controllers/geoedit.js"></script>
+<!--
+<script>function onGoogleReady() {
+    angular.bootstrap(document.getElementById("app"), ['ispanApp']);
+    console.log("hello we have loaded an angular app in body !");
+}
+</script>
+-->
+
+<script src="scripts/controllers/geomark.js"></script>
 <!-- endbuild -->
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
+
+
+ <script>function onGoogleReady() {
+     angular.bootstrap(document.getElementById("app"), ['ispanApp']);
+     console.log("hello we have loaded an angular app in body !");
+ }
+ </script>
+
 </body>
 </html>

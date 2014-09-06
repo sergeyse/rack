@@ -9,6 +9,9 @@ angular.module('ispanApp', [
         'trColorFilter',
         'firebase'
 
+
+
+
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -50,6 +53,10 @@ angular.module('ispanApp', [
             .when('/geoedit/:geoId', {
               templateUrl: 'views/geoedit.html',
               controller: 'GeoeditCtrl'
+            })
+            .when('/geomark', {
+              templateUrl: 'views/geomark.html',
+              controller: 'GeomarkCtrl'
             })
             .otherwise({
                 redirectTo: '/'
@@ -115,5 +122,6 @@ angular.module('ispanApp', [
          console.log(notif);
          });*/
     });
+
 
 

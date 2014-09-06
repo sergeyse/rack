@@ -1,18 +1,6 @@
-<p>This is the landingMap view.</p>
-<div>
-    <button ng-model="showForm" ng-click="showForm=true" ng-hide="showForm" type="button"
-            class="btn btn-primary btn-lg">Mark Geo
-    </button>
-    <p></p>
+<p>This is the geomark view.</p>
+<form class="geo-form" role="form" name="form" novalidate >
 
-</div>
-<form class="geo-form" role="form" name="form" novalidate ng-show="showForm">
-    <!--    <div class="form-group">
-            <label   class=" control-label" >Rekka:</label>
-            <div >
-                <p class="form-control-static"><span><h3 style="color: #3276b1">{{ defentr.pontun}}</h3></span></p>
-            </div>
-        </div>-->
 
     <div class="form-group">
         <label for="Comment">Enter a comment </label>
@@ -31,7 +19,7 @@
         <input type="number" class="form-control" id="rekkan" placeholder="Rekkan" name="rekkan"
                ng-model="defGeo.rekkan" max="9999" integer/>
         <span ng-show="form.rekkan.$error.integer" class="sample-show-hide">This is not valid integer!</span>
-        <!--"form.pontun.$error.integer"this is corresponding to a form and input ID NOT a data model !-->
+        <!--"form.pontun.$error.integer"this is corresponding to a form and input ID NOT a data model in controller!-->
            <span ng-show=" form.rekkan.$error.max">
         The value must not be biger than 9999!</span>
     </div>
@@ -44,16 +32,7 @@
     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="geoRec()">
         Skrá
     </button>
-    <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="showForm=false">
-        Cancel
-    </button>
+   <a ng-href="#/googleMap">
+       <button class="btn btn-danger btn-lg btn-block">Cancel</button>
+   </a>
 </form>
-
-<div>
-    <a ng-href="#/googleMap">
-        <button ng-model="showForm" ng-click="showForm=true" ng-hide="showForm" type="button"
-                class="btn btn-primary btn-lg">Map &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-        </button>
-    </a>
-
-</div>
