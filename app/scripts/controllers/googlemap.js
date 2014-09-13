@@ -2,7 +2,11 @@
 
 
 angular.module('ispanApp')
-    .controller('GooglemapCtrl', [ '$scope', '$firebase', '$location', function ($scope, $firebase, $location) {
+    .controller('GooglemapCtrl', [ '$scope', '$firebase', '$location', 'currentUser', function ($scope, $firebase, $location, currentUser) {
+
+        if (!currentUser){
+            $location.path('/loginmain');
+        };
 
 
         var mapOptions = {
@@ -22,7 +26,7 @@ angular.module('ispanApp')
         var createMarker = function (info) {
 
             var marker = new google.maps.Marker({
-                id:info.name(),
+                id: info.name(),
                 map: $scope.map,
                 position: new google.maps.LatLng(info.val().lat, info.val().lon),
                 title: info.val().comment
@@ -42,15 +46,15 @@ angular.module('ispanApp')
 //----------------- Begin deleting particular marker with an ID that is declared in a google.maps.Marker object and connected to Firebase unique ID--------------------
         function deleteOverlays(id) {
 
-                for (var i in $scope.markers) {
-console.log("for loop begin i.id = "+$scope.markers[i].id);
-                    if ($scope.markers[i].id == id){
-                        $scope.markers[i].setMap(null);
-                        console.log("inside loop");
-                    }
-
-
+            for (var i in $scope.markers) {
+                console.log("for loop begin i.id = " + $scope.markers[i].id);
+                if ($scope.markers[i].id == id) {
+                    $scope.markers[i].setMap(null);
+                    console.log("inside loop");
                 }
+
+
+            }
 
 
         }
@@ -82,22 +86,22 @@ console.log("for loop begin i.id = "+$scope.markers[i].id);
         refLocation.on('child_added', function (childSnapshot, prevChildName) {
             createMarker(childSnapshot);
             console.log(childSnapshot.name());
-        //    console.log("snapshot "+childSnapshot+" prevName  "+prevChildName);
-             //createMarker(childSnapshot);
-          //   console.log("snap val = "+childSnapshot.val());
+            //    console.log("snapshot "+childSnapshot+" prevName  "+prevChildName);
+            //createMarker(childSnapshot);
+            //   console.log("snap val = "+childSnapshot.val());
             // console.log("snap exportVal = "+childSnapshot.exportVal());
             // console.log("+1"+childSnapshot.exportVal().lat);
             //remove angular fire and use this to create marker and watch for a chadge
         });
         refLocation.on('child_removed', function (oldChildSnapshot) {
             deleteOverlays(oldChildSnapshot.name());
-            console.log("deleted markers"+oldChildSnapshot.name());
-          //  $scope.location();
+            console.log("deleted markers" + oldChildSnapshot.name());
+            //  $scope.location();
 
 
         });
 
- // TODO remove unuserd lib ui-map to optimaize loading time
+        // TODO remove unuserd lib ui-map to optimaize loading time
         /*      for (var i = 0; i < locationsList.length; i++){
          createMarker(locationsList[i]);
          }*/
@@ -126,7 +130,7 @@ console.log("for loop begin i.id = "+$scope.markers[i].id);
                 }
             });
 //            ----------------END testing geomark reloading ---------------
-           // $location.path('/landingMap/')
+            // $location.path('/landingMap/')
         }
 
 

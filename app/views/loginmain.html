@@ -1,0 +1,41 @@
+<p>This is the loginmain view.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" ng-model="userData.name.first" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" ng-model="userData.name.last" placeholder="Last Name">
+                    </div>
+                   <a> <button class="btn btn-primary" ng-click="logout()">Log Out</button></a>
+
+                </form>
+
+          <h3>Login form</h3>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail" ng-model="inputEmail" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" ng-model="inputPassword" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-submit="login()" ng-click="login()">Log In</button>
+                    <button class="btn btn-default" ng-click="register()">Register</button>
+
+                </form>
+
+            <p class="alert alert-danger" ng-show="loginMessage" style="margin-top: 20px;">{{loginMessage}}</p>
+        </div>
+        <div class="col-md-8">
+            <p><strong>User:</strong> {{user}}</p>
+            <p><strong>User Data:</strong> {{userData}}</p>
+        </div>
+    </div>
+</div>

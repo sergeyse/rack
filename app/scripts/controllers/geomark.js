@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('ispanApp')
-    .controller('GeomarkCtrl', ['$scope', '$firebase','$location', function ($scope, $firebase,$location) {
+    .controller('GeomarkCtrl', ['$scope', '$firebase','$location','currentUser', function ($scope, $firebase,$location,currentUser) {
+        if(!currentUser){
+            $location.path('/loginmain/');
+        }
 
         var latData;
         var lonData, errorMessage;
@@ -75,6 +78,8 @@ angular.module('ispanApp')
             $scope.defGeo.time = formatDate(new Date);
             $scope.defGeo.lat = latData;
             $scope.defGeo.lon = lonData;
+            $scope.defGeo.usermail = currentUser.email;
+
             console.log($scope.defGeo);
 
             ref.$push($scope.defGeo).then(function(){

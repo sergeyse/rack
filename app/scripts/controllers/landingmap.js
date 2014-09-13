@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('ispanApp')
-    .controller('LandingmapCtrl', ['$scope', '$firebase','$location', function ($scope, $firebase,$location) {
-
+    .controller('LandingmapCtrl', ['$scope', '$firebase','$location','currentUser', function ($scope, $firebase,$location,currentUser) {
+console.log("currentUser info ", currentUser);
+if (!currentUser){
+    $location.path('/loginmain');
+}
         var latData;
         var lonData, errorMessage;
         $scope.showForm = false;

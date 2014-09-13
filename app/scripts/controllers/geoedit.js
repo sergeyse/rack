@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('ispanApp')
-  .controller('GeoeditCtrl',[ '$scope','$routeParams','$firebase','geoURL','$location',function ($scope,$routeParams,$firebase,geoURL,$location) {
+  .controller('GeoeditCtrl',[ '$scope','$routeParams','$firebase','geoURL','$location','currentUser',function ($scope,$routeParams,$firebase,geoURL,$location,currentUser) {
 
+        if (!currentUser){
+            $location.path('/loginmain');
+        }
         var geoMarkerUrl = geoURL + $routeParams.geoId;
         $scope.geoMarker = $firebase(new Firebase(geoMarkerUrl)).$asObject();
 

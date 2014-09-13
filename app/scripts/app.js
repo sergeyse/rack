@@ -11,7 +11,6 @@ angular.module('ispanApp', [
 
 
 
-
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -44,84 +43,77 @@ angular.module('ispanApp', [
             })
             .when('/landingMap', {
                 templateUrl: 'views/landingmap.html',
-                controller: 'LandingmapCtrl'
+                controller: 'LandingmapCtrl',
+                resolve: {
+                    "currentUser": ["simpleLogin", function (simpleLogin) {
+                     // here we resolving a promise and injecting a "currentUsen into a controller "
+                         return    simpleLogin.$getCurrentUser();
+                        //   return 42;
+
+                    }]
+                }
+
             })
             .when('/googleMap', {
                 templateUrl: 'views/googlemap.html',
-                controller: 'GooglemapCtrl'
+                controller: 'GooglemapCtrl',
+                resolve: {
+                    "currentUser": ["simpleLogin", function (simpleLogin) {
+                        return    simpleLogin.$getCurrentUser();
+
+
+                    }]
+                }
             })
             .when('/geoedit/:geoId', {
-              templateUrl: 'views/geoedit.html',
-              controller: 'GeoeditCtrl'
+                templateUrl: 'views/geoedit.html',
+                controller: 'GeoeditCtrl',
+                resolve: {
+                    "currentUser": ["simpleLogin", function (simpleLogin) {
+                        return    simpleLogin.$getCurrentUser();
+
+
+                    }]
+                }
             })
             .when('/geomark', {
-              templateUrl: 'views/geomark.html',
-              controller: 'GeomarkCtrl'
+                templateUrl: 'views/geomark.html',
+                controller: 'GeomarkCtrl',
+                resolve: {
+                    "currentUser": ["simpleLogin", function (simpleLogin) {
+                        return    simpleLogin.$getCurrentUser();
+
+
+                    }]
+                }
+            })
+            .when('/loginmain', {
+                templateUrl: 'views/loginmain.html',
+                controller: 'LoginmainCtrl'
             })
             .otherwise({
                 redirectTo: '/'
             });
     })
     .value('fbURL', 'https://incandescent-fire-7211.firebaseio.com/rekkar/')
-    .value('geoURL','https://incandescent-fire-7211.firebaseio.com/map/')
+    .value('geoURL', 'https://incandescent-fire-7211.firebaseio.com/map/')
 
     .factory('Orders', function ($firebase, fbURL, $q) {
         //return $firebase(new Firebase(fbURL));
         var ref = $firebase(new Firebase(fbURL));
         return ref.$asArray();
-     /*   var ordersList =ref.$asArray();
-        ordersList.$loaded().then(function(){
-           console.log("--Orders-- "+ordersList);
-            return ordersList;
-        });*/
 
 
-        /*function defPromise() {
+    }
 
 
-         var deferred = $q.defer();
+)
+    .factory('simpleLogin', ["$firebaseSimpleLogin", function ($firebaseSimpleLogin) {
+        var ref = new Firebase('https://incandescent-fire-7211.firebaseio.com/');
+        console.log("login" + $firebaseSimpleLogin(ref));
+        return $firebaseSimpleLogin(ref);
+    }]);
 
-         deferred.notify('wait a second ,please...')
-
-
-         deferred.resolve(
-         // setTimeout(function(){alert("uff")},3000)
-         $firebase(new Firebase(fbURL))
-
-         );
-         deferred.reject('an error has happen ')
-
-
-         return deferred.promise;
-         }
-
-         var test = new defPromise();
-         console.log("test" + test());  // ATT this is an object , NOT  a Function  !
-
-         console.log("msg" + new defPromise());
-         return new defPromise().then(function (odrs) {
-
-         return odrs;
-         console.log("???");
-         console.log(odrs);
-         }, function (error) {
-         return error;
-         }, function (notif) {
-         console.log(notif);
-         return notif;
-
-         });
-
-         console.log("MSG" + difPromise());
-         difPromise().then(function (odrs) {
-         return odrs;
-         console.log(odrs);
-         }, function (error) {
-         console.log(error);
-         }, function (notif) {
-         console.log(notif);
-         });*/
-    });
 
 
 
