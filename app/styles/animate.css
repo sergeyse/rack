@@ -3161,8 +3161,80 @@ Copyright (c) 2014 Daniel Eden
     -webkit-animation: fadeOutUp 0.5s;
     animation: fadeOutUp 0.5s;
 }
-#map{
-    height: 80%;
-    /*width: 300px;*/
-}
+/*#map{
+    height: 400px;
+    *//*width: 300px;*//*
+}*/
+
+
+
 /*------------ End tets animation block--------------*/
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    #map{
+        height: 320px;
+        /*width: 300px;*/
+    }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    #map{
+        height: 600px;
+        /*width: 300px;*/
+    }
+    #desctopHidecss{
+        display: none;
+    }
+
+}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
