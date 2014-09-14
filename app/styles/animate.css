@@ -3162,7 +3162,7 @@ Copyright (c) 2014 Daniel Eden
     animation: fadeOutUp 0.5s;
 }
 #map{
-    height: 430px;
+    height: 80%;
     /*width: 300px;*/
 }
 /*------------ End tets animation block--------------*/

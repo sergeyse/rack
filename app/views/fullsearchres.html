@@ -16,7 +16,9 @@
             </div>-->
 
         </div>
-        <table class="table">
+
+        <!------------------------------- wihout scrollere------------------>
+        <table class="table" style="height: 300px" ui-scroll-viewport>
             <div class="row">
                 <tr>
                     <th><a href="" ng-click="predicate = 'postn'; reverse=!reverse">PostN</a>
@@ -30,10 +32,12 @@
                     </a></th>
                 </tr>
             </div>
+
             <div class="row">
                 <!--this one is used when we need a list from an object returned from a Firebase-->
                 <!--<tr  class="repeat-item" ng-repeat="r in allRecords | orderByPriority | orderBy:predicate:reverse | filter:search">-->
                 <tr class="repeat-item" ng-repeat="r in allRecords  | orderBy:predicate:reverse | filter:search">
+                <!--<tr class="repeat-item" ui-scroll="r in allRecords  >-->
                     <td>{{r.postn}}</td>
                     <td>{{r.rekkan}}</td>
                     <td class="hidden-xs">{{r.gata}}
@@ -43,5 +47,21 @@
                     </td>
                 </tr>
             </div>
+
         </table>
+        <!-------------------------------END wihout scrollere------------------>
+
+      <!--     <table>
+            <tbody style="height:300px" ng-scroll-viewport>
+            <tr ng-scroll="r in Orders" is-loading="loading">
+
+                <td style="width: 30px">
+                    {{r.postn}}
+                </td>
+                <td style="width: 100px">
+                    {{item}}
+                </td>
+            </tr>
+            </tbody>
+        </table>-->
     </div>

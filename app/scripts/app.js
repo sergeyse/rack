@@ -7,7 +7,8 @@ angular.module('ispanApp', [
         'ngSanitize',
         'ngRoute',
         'trColorFilter',
-        'firebase'
+        'firebase',
+        'ui.utils'
 
 
 
