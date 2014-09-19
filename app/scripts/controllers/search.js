@@ -5,10 +5,10 @@
 
 angular.module('ispanApp')
     .controller('searchCtrl', ['$scope', '$routeParams', '$http','$firebase','Orders','fbURL' ,'$location',function ($scope, $routeParams, $http,$firebase,Orders,fbURL,$locaton) {
-/*  var msg ;
+  var msg ;
         $http.get('assets/' + $routeParams.orderId + '.json').success(function (data) {
             $scope.orders = data;
-        });*/
+        });
      //    var fref = new Firebase("https://incandescent-fire-7211.firebaseio.com/chat")
          /*  fref.push(
                { "chat":

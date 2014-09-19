@@ -96,7 +96,7 @@ angular.module('ispanApp', [
                 redirectTo: '/'
             });
     })
-    .value('fbURL', 'https://incandescent-fire-7211.firebaseio.com/rekkar/')
+    .value('fbURL', 'https://rack-42.firebaseio.com/rekkar/')
     .value('geoURL', 'https://incandescent-fire-7211.firebaseio.com/map/')
 
     .factory('Orders', function ($firebase, fbURL, $q) {
@@ -109,11 +109,11 @@ angular.module('ispanApp', [
 
 
 )
-    .factory('simpleLogin', ["$firebaseSimpleLogin", function ($firebaseSimpleLogin) {
+    /*.factory('simpleLogin', ["$firebaseSimpleLogin", function ($firebaseSimpleLogin) {
         var ref = new Firebase('https://incandescent-fire-7211.firebaseio.com/');
         console.log("login" + $firebaseSimpleLogin(ref));
         return $firebaseSimpleLogin(ref);
-    }]);
+    }]);*/
 
 
 

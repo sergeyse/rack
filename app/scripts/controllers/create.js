@@ -10,6 +10,7 @@ angular.module('ispanApp')
 
        // new code for edit
         var orderUrl = fbURL + $routeParams.orderId;
+        console.log("routeparam",orderUrl);
         var sync = $firebase(new Firebase(orderUrl));
         $scope.od = sync.$asObject();
         console.log($scope.od);
